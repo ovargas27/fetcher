@@ -40,9 +40,16 @@ gem 'spring',        group: :development
 
 # Cutomer Gems
 
+gem 'haml-rails', '~> 0.5.3'
+
 gem 'httparty', '~> 0.13.1'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
 end
 
+group :test do
+  gem 'vcr', '~> 2.9.3'
+  gem 'webmock', '~> 1.18.0'
+end
 

@@ -1,0 +1,7 @@
+%h1 Page Fetcher
+
+= form_for @page do |f|
+  = f.text_field :facebook_id
+  = f.submit
+
+= render @pages
