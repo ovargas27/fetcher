@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @page = Page.new
+    @search = OpenStruct.new(params[:search])
     @pages = Page.all
   end
 
@@ -8,13 +8,18 @@ class PagesController < ApplicationController
     page_id = search_params[:facebook_id]
     fb_page = PageFetcher.find(page_id)
     page = Page.new fb_page
-    page.save
-    redirect_to pages_path
+    if page.save
+      puts "==not=="
+      redirect_to pages_path
+    else
+      puts "==notice=="
+      redirect_to pages_path, notice: "Error"
+    end
   end
 
   private
 
   def search_params
-    params.require(:page).permit(:facebook_id)
+    params.require(:search).permit(:facebook_id)
   end
 end

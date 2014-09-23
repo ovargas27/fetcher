@@ -1,7 +1,7 @@
 %h1 Page Fetcher
 
-= form_for @page do |f|
+= form_for :search, url: pages_path, method: :post do |f|
   = f.text_field :facebook_id
-  = f.submit
+  = f.submit 'Search'
 
 = render @pages
