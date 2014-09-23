@@ -1,7 +1,15 @@
-%h1 Page Fetcher
+.row
+  .small-12.columns
+    %h1 Page Fetcher
 
-= form_for :search, url: pages_path, method: :post do |f|
-  = f.text_field :facebook_id
-  = f.submit 'Search'
+.row
+  .small-12.columns
+    = form_for :search, url: pages_path, method: :post do |f|
+      .row.collapse
+        .small-10.columns
+          = f.text_field :facebook_id, placeholder: 'Facebook ID'
+        .small-2.columns
+          = f.submit 'Search', class: 'button postfix'
 
-= render @pages
+.row
+  = render @pages

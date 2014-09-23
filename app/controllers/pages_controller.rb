@@ -5,14 +5,10 @@ class PagesController < ApplicationController
   end
 
   def create
-    page_id = search_params[:facebook_id]
-    fb_page = PageFetcher.find(page_id)
-    page = Page.new fb_page
-    if page.save
-      puts "==not=="
+    page = Page.search search_params
+    if page.present?
       redirect_to pages_path
     else
-      puts "==notice=="
       redirect_to pages_path, notice: "Error"
     end
   end

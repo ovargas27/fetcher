@@ -1,4 +1,7 @@
-.page
-  .image
-    = image_tag page.profile_picture
-  .name #{page.name}
+.small-12.medium-4.large-2.columns
+  %ul.pricing-table.page
+    %li.bullet-item
+      = image_tag page.profile_picture
+    %li.title
+      = link_to page.name, page_posts_path(page)
+

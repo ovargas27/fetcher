@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 
 # Cutomer Gems
 
+gem 'foundation-rails', '5.4.3.0'
 gem 'haml-rails', '~> 0.5.3'
 
 gem 'httparty', '~> 0.13.1'
