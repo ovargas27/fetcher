@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     if page.present?
       redirect_to pages_path
     else
-      redirect_to pages_path, notice: "Error"
+      redirect_to pages_path, alert: "Facebook Page doesn't exist"
     end
   end
 
